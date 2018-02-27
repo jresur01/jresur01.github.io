@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style media="screen">
+    h1{
+      align-items: center;
+    }
+      .height1 {
+        height: 100px;
+      }
+      .height2 {
+        height: 1800px;
+      }
+      .align {
+        align-content: center;
+      }
+
+    </style>
+</head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 height1  ">
+          <h1>The Femcees of Hip Hop</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 height2  ">
+
+        </div>
+        <div class="col-md-8 height2 output" align>
+
+        </div>
+        <div class="col-md-2 height2  ">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 height1  ">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      //when its loaded
+
+      $(document).ready(function() {
+        //this function get a random color between 0 and 255
+        function getRandomColor() {
+          return Math.floor(Math.random() * 255);
+        }
+
+        //get all the elements (divs) with the class .randomColor
+        var randomColor = $(".randomColor");
+
+
+        //loop through all elements
+        //for each element change the css background colour to RGB + random colours
+        $.each(randomColor, function(index, item) {
+          $(this).css("background-color", "RGB(" + getRandomColor() + "," + getRandomColor() + "," + getRandomColor() + ")");
+        })
+
+      })
+    </script>
+
+  <script>
+
+var rappers =
+[
+  {
+    "imgUrl":"img/nicki.jpg",
+    "name":"Nicki Minaj",
+    "age":35,
+    "hometown":"Queens, NY",
+    "biggestHit":"Anaconda"
+},
+
+{
+  "imgUrl":"img/lauryn.jpg",
+  "name":"Lauryn Hill",
+  "age":42,
+  "hometown":"East Orange, NJ",
+  "biggestHit":"Doo Wop (That Thing)"
+},
+
+{
+  "imgUrl":"img/kim.jpg",
+  "name":"Lil Kim",
+  "age":42,
+  "hometown":"New York City, NY",
+  "biggestHit":"Crush on You"
+},
+
+{
+  "imgUrl":"img/cardi.jpg",
+  "name":"Cardi B",
+  "age":25,
+  "hometown":"The Bronx, NY",
+  "biggestHit":"Bodak Yellow"
+},
+
+{
+  "imgUrl":"img/missy.jpg",
+  "name":"Missy Elliot",
+  "age":46,
+  "hometown":"Portsmouth, VA",
+  "biggestHit":"Work it"
+}
+
+]
+
+
+  $(document).ready(function(){
+  $(".output").html("test output");
+  var html="<table class='table table-striped table-hover'>"+
+  "<tr>"+
+    "<th>Picture</th>"+
+    "<th>Name</th>"+
+    "<th>Age</th>"+
+    "<th>Hometown</th>"+
+    "<th>Biggest Hit</th>"+
+  "</tr>";
+
+
+  //here is the loop of the array 'rappers'
+  for(var i=0;i<rappers.length;i++){
+
+    console.log("i "+i);
+    html+=   "<tr>"+
+      "<td><img src='"+rappers[i].imgUrl+"'/></td>"+
+      "<td>"+rappers[i].name+"</td>"+
+      "<td>"+rappers[i].age+"</td>"+
+      "<td>"+rappers[i].hometown+"</td>"+
+      "<td>"+rappers[i].biggestHit+"</td>"+
+    "</tr>";
+
+  }
+
+  html += "</table>";
+  $(".output").html(html);
+  });
+
+
+  </script>
+
+
+  </body>
+  </html>
