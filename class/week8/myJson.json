@@ -1,0 +1,52 @@
+[
+  {
+    "vegtable":"Cucumber",
+    "color":"Green",
+    "size":"Medium-Large",
+    "haveSeeds": true,
+    "placeofGrowth":"Vines and Bushes",
+    "locationofOrigin":"India"
+  },
+  {
+    "vegtable":"Corn",
+    "color":"Yellow",
+    "size":"Medium-Large",
+    "haveSeeds": true,
+    "placeofGrowth":"Stalks",
+    "locationofOrigin":"Mexico"
+  },
+  {
+    "vegtable":"Peppers",
+    "color":"Red, Yellow, Orange,Green",
+    "size":"Medium",
+    "haveSeeds": true,
+    "placeofGrowth":"Plants",
+    "locationofOrigin":"India"
+  },
+  {
+    "vegtable":"Carrots",
+    "color":"Orange",
+    "size":"Medium",
+    "haveSeeds": false,
+    "placeofGrowth":"In-ground",
+    "locationofOrigin":"Afganistan"
+  },
+  {
+    "vegtable":"Eggplant",
+    "color":"Purple",
+    "size":"Large",
+    "haveSeeds": true,
+    "placeofGrowth":"Plants",
+    "locationofOrigin":"North America, Australia, New Zealand"
+  },
+  {
+    "vegtable":"Tomatoes",
+    "color":"Red",
+    "size":"Small",
+    "haveSeeds": true,
+    "placeofGrowth":"Plants",
+    "locationofOrigin":"Peru, Bolivia, Chile, Ecuador"
+  },
+
+
+]
