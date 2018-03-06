@@ -19,23 +19,14 @@
   </head>
   <body>
     <div class="container">
+    <div class="row">
       <div class="output">
 
       </div>
     </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
     </div>
-</div>
+
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -45,8 +36,7 @@
 
 
 //get the JSON
-var url
- ="https://jresur01.github.io/class/week8/assets/myJson.json";
+var url ="https://jresur01.github.io/class/week8/assets/myJson.json";
 
 $.getJSON(url).done(function(data){
   console.log("success! ");
@@ -55,16 +45,20 @@ $.getJSON(url).done(function(data){
 var dataHtml= "";
 //loop through the data
 for(var i = 0; i < data.length; i++){
-  dataHtml+="<div>"+data[i].vegtable+"</div>";
+  dataHtml+="<div>"+data[i].vegtable+"</div>"
+  +"<div>"+data[i].color+"</div>"
+  +"<div>"+data[i].size+"</div>"
+  +"<div>"+data[i].haveSeeds+"</div>"
+  +"<div>"+data[i].placeofGrowth+"</div>"
+  +"<div>"+data[i].locationofOrigin+"</div>";
 }
 
 $(document).ready(function(){
 
-$(".output").html(dataHtml);
-
 //we need to explicitly call this with dynamic html
 $(".output").html(dataHtml);
 })
+
 }).fail(function(data){
   console.log("failed! "+JSON.stringify(data));
 });
