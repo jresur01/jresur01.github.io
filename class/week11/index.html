@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>Chindogu</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -30,7 +30,6 @@
         margin-top: 3em;
         margin-bottom: 3em;
       }
-
 
     </style>
   </head>
@@ -70,7 +69,7 @@
         <div class="col-md-2 adsLeft">
 
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 output flexSpaceAround">
 
         </div>
         <div class="col-md-2 adsRight">
@@ -145,10 +144,65 @@ for(var key in options){
     //do this when user chanfes the select
     $(".selectContainer").find("select").on("change", function(){
         var val = $(this).val();
-        alert("value "+val);
+        if (val){
+          $.get(val)
+          .done(function(data){
+            console.log("Success! get select json! ");
+            console.dir(data);
+            writeJSONToDom(data.Sheet1);
+          })
+          .fail(function(data){
+            console.log("Fail! get select json ");
+            console.dir(data);
+          })
+        }
+        //alert("value "+val);
     })
 
   }
+
+function writeJSONToDom(d){
+  // <div data-id="1" class="itemContainer">
+  // <div class="proAndTitle">Kira risu</div>
+  // <div class="proAndPrice">¥800</div>
+  // <div class="imageContainer"><img src="https://andersonguelphjs.github.io/class/week11/img/kirarisu.png"></div>
+  // <div class="buttonContainer">
+  //   <button type="button" class="buyButton btn-default btn">Buy</button>
+  // </div>
+  // </div
+  var html="";
+  console.log("writeJSONToDom");
+  console.dir(d);
+  for( var jsonObj in d){
+    console.log("an object "+jsonObj);
+    console.log(d[jsonObj]);
+    html+="<div data id='"+jsonObj+"' class='itemContainer'>"
+    //here loop through the keys
+
+
+    for (key in d[jsonObj]){//loop through the keys of each object
+      if (key==="itemId"){
+        continue;
+      }
+      if (d[jsonObj][key].indexOf("github")!==-1){
+        // if github text appears in the value
+        html+="<div class='imageContainer'><img src='https://"+d[jsonObj][key]+"'></div>";
+      }
+      else{
+        html+="<div class='"+key+"'>"+d[jsonObj][key]+"</div>";
+      }
+    }
+
+    html+="</div>";
+    html+="<div class='buttonContainer'>"
+    html+="<button type='button' class='buyButton btn-default btn'>Buy</button>";
+    html+="</div>";
+    html+="</div>";
+
+  }
+
+  $(".output").html(html);
+}
 
 
 $(document).ready(function(){

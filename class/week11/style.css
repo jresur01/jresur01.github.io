@@ -68,3 +68,12 @@ hr{
 select{
   width: auto;
 }
+
+/*for output*/
+.itemContainer{
+  width: 200px;
+}
+
+.output{
+  flex-wrap: wrap;
+}
