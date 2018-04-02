@@ -154,8 +154,8 @@ var spriteImages = [{
   {
       "spriteMapUrl": "images/steven.png",
       "numFrames": 7,
-      "width": 3527,
-      "height": 501,
+      "width": 1023,
+      "height": 145,
       "name": "steven"
     },
   {
@@ -164,7 +164,16 @@ var spriteImages = [{
     "width": 4800,
     "height": 200,
     "name": "cat"
+  },
+  {
+    "spriteMapUrl":"https://alissavalentina.github.io/class/week12/animation/images/winnie2.png",
+    "numFrames": 10,
+    "width": 919 ,
+    "height": 100,
+    "name":"winnie the pooh"
   }
+
+
 ];
 var animations = []; //an array to hold the currently existing sprite obects
 var maxAnimations = spriteImages.length; //how many animations we want on the screen at any one time
