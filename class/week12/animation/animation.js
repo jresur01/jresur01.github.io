@@ -171,7 +171,38 @@ var spriteImages = [{
     "width": 919 ,
     "height": 100,
     "name":"winnie the pooh"
+  },
+  {
+    "spriteMapUrl": "https://celiafosch.github.io/class/week12/animation/images/henry.png",
+    "numFrames": 5,
+    "width": 480,
+    "height": 480,
+    "name": "Henry"
+  },
+  {
+   "spriteMapUrl": "https://sluu01.github.io/class/week12/animation/images/iceCream2.png",
+   "numFrames": 5,
+   "width": 2500,
+   "height": 1259,
+   "name": "dessert"
+ },
+ {
+    "spriteMapUrl": "https://sydneygang.github.io/class/images/walk.png",
+    "numFrames": 8,
+    "width": 1472,
+    "height": 325,
+    "name": "walk"
+  },
+  {    "spriteMapUrl":"https://julianneferr.github.io/class/week12/animation/images/lightbulb.png",
+    "numFrames": 7,
+    "width": 1000,
+    "height": 200,
+    "name": "lightbulb"
   }
+
+
+
+
 
 
 ];
